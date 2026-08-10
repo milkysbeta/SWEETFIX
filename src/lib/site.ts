@@ -154,6 +154,12 @@ export type WorkItem = {
   blurb: string
   /** Files live in public/images/work/<id>/ — see that folder's README. */
   images: string[]
+  /**
+   * Stand-in photography while Matt's own photos are pending. Shown only
+   * when `images` is empty, and always badged as a sample — a stock photo
+   * captioned as his work would be a false claim to a customer.
+   */
+  samples?: string[]
   tag: 'Build' | 'Renovation' | 'Stage' | 'Props' | 'Outdoor'
 }
 
@@ -168,6 +174,7 @@ export type WorkItem = {
 export const work: WorkItem[] = [
   {
     id: 'private-residence-queenstown',
+    samples: ['/images/samples/renovation.jpg', '/images/samples/painting.jpg'],
     title: 'Private Residence',
     location: 'Queenstown',
     blurb:
@@ -177,6 +184,7 @@ export const work: WorkItem[] = [
   },
   {
     id: 'fusion-palapa-stage',
+    samples: ['/images/samples/stage.jpg', '/images/samples/framing.jpg'],
     title: 'Fusion Festival — Palapa Stage',
     location: 'Germany',
     blurb:
@@ -186,6 +194,7 @@ export const work: WorkItem[] = [
   },
   {
     id: 'shipwrecked-festival',
+    samples: ['/images/samples/construction.jpg', '/images/samples/timber.jpg'],
     title: 'Shipwrecked Festival',
     location: 'New Zealand',
     blurb:
@@ -195,6 +204,7 @@ export const work: WorkItem[] = [
   },
   {
     id: 'film-props',
+    samples: ['/images/samples/workshop.jpg', '/images/samples/tools.jpg'],
     title: 'Film & High-Tech Props',
     location: 'Various',
     blurb:
@@ -204,6 +214,7 @@ export const work: WorkItem[] = [
   },
   {
     id: 'decks-southern-lakes',
+    samples: ['/images/samples/deck.jpg', '/images/samples/sawdust.jpg'],
     title: 'Decks & Outdoor',
     location: 'Southern Lakes',
     blurb: 'Decking, screens and outdoor structures built for alpine weather.',
@@ -212,6 +223,7 @@ export const work: WorkItem[] = [
   },
   {
     id: 'new-build-carpentry',
+    samples: ['/images/samples/framing.jpg', '/images/samples/construction.jpg'],
     title: 'New Build Carpentry',
     location: 'New Zealand',
     blurb: 'Framing, fit-out and finishing across residential new builds.',

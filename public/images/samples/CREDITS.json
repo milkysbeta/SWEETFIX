@@ -1,72 +1,82 @@
 [
   {
-    "title": "Centralne Muzeum Morskie and SS Sołdek in Gdańsk.jpg",
-    "width": 3963,
-    "height": 2680,
-    "license": "CC BY-SA 3.0",
-    "artist": "DerHexer",
-    "page": "https://commons.wikimedia.org/wiki/File:Centralne_Muzeum_Morskie_and_SS_So%C5%82dek_in_Gda%C5%84sk.jpg",
-    "category": "Timber framing",
-    "slug": "framing"
+    "slug": "construction",
+    "description": "brown wooden building",
+    "photographer": "Avel Chuklanov",
+    "profile": "https://unsplash.com/@chuklanov",
+    "page": "https://unsplash.com/photos/brown-wooden-building-a0BEHFMKqTE",
+    "license": "Unsplash License"
   },
   {
-    "title": "Byggnadsstomme2.jpg",
-    "width": 2778,
-    "height": 2111,
-    "license": "CC BY-SA 3.0",
-    "artist": "Entheta",
-    "page": "https://commons.wikimedia.org/wiki/File:Byggnadsstomme2.jpg",
-    "category": "House construction",
-    "slug": "construction"
+    "slug": "framing",
+    "description": "a wooden structure under construction under a blue sky",
+    "photographer": "Nate Johnston",
+    "profile": "https://unsplash.com/@natejohnston",
+    "page": "https://unsplash.com/photos/a-wooden-structure-under-construction-under-a-blue-sky-QtF2v8BP46I",
+    "license": "Unsplash License"
   },
   {
-    "title": "Angle in metall.jpg",
-    "width": 2816,
-    "height": 2112,
-    "license": "CC BY-SA 3.0",
-    "artist": "Boatbuilder",
-    "page": "https://commons.wikimedia.org/wiki/File:Angle_in_metall.jpg",
-    "category": "Carpentry tools",
-    "slug": "tools"
+    "slug": "deck",
+    "description": "a deck with chairs and tables on it next to a house",
+    "photographer": "Point3D Commercial Imaging Ltd.",
+    "profile": "https://unsplash.com/@3dottawa",
+    "page": "https://unsplash.com/photos/a-deck-with-chairs-and-tables-on-it-next-to-a-house-adTeb8MrQZs",
+    "license": "Unsplash License"
   },
   {
-    "title": "2008-08 Przystanek Woodstock 3.jpg",
-    "width": 3070,
-    "height": 1404,
-    "license": "CC BY 3.0",
-    "artist": "Ralf Lotys (Sicherlich)",
-    "page": "https://commons.wikimedia.org/wiki/File:2008-08_Przystanek_Woodstock_3.jpg",
-    "category": "Concert stages",
-    "slug": "stage"
+    "slug": "tools",
+    "description": "stainless steel hand tool on black wooden table",
+    "photographer": "Tigran Hambardzumyan",
+    "profile": "https://unsplash.com/@tigranh47",
+    "page": "https://unsplash.com/photos/stainless-steel-hand-tool-on-black-wooden-table-02iCE7a_lLs",
+    "license": "Unsplash License"
   },
   {
-    "title": "Deck over the mud on Brighouse Footpath 34-10, Hove Edge - geograph.org.uk - 7292802.jpg",
-    "width": 2048,
-    "height": 1536,
-    "license": "CC BY-SA 2.0",
-    "artist": "Humphrey Bolton",
-    "page": "https://commons.wikimedia.org/wiki/File:Deck_over_the_mud_on_Brighouse_Footpath_34-10,_Hove_Edge_-_geograph.org.uk_-_7292802.jpg",
-    "category": "Wooden decks",
-    "slug": "deck"
+    "slug": "workshop",
+    "description": "Young carpenter working with cutter in his studio",
+    "photographer": "Craft Kitties",
+    "profile": "https://unsplash.com/@craftkitties",
+    "page": "https://unsplash.com/photos/a-person-cutting-a-piece-of-wood-GfYA6q5ESLI",
+    "license": "Unsplash License"
   },
   {
-    "title": "Betsy's house - porch scroll work.jpg",
-    "width": 3072,
-    "height": 2304,
-    "license": "Public domain",
-    "artist": "Jas9494",
-    "page": "https://commons.wikimedia.org/wiki/File:Betsy%27s_house_-_porch_scroll_work.jpg",
-    "category": "Carpentry",
-    "slug": "workshop"
+    "slug": "painting",
+    "description": "black and white box on brown wooden table",
+    "photographer": "Karl Solano",
+    "profile": "https://unsplash.com/@karlsolano",
+    "page": "https://unsplash.com/photos/black-and-white-box-on-brown-wooden-table-eQ-8iUrb07g",
+    "license": "Unsplash License"
   },
   {
-    "title": "Czarny dab tarcica.jpg",
-    "width": 2018,
-    "height": 1079,
-    "license": "CC BY-SA 4.0",
-    "artist": "Mnemosine",
-    "page": "https://commons.wikimedia.org/wiki/File:Czarny_dab_tarcica.jpg",
-    "category": "Wooden boards",
-    "slug": "timber"
+    "slug": "stage",
+    "description": "grayscale photography of stage with lights",
+    "photographer": "Jorik Kleen",
+    "profile": "https://unsplash.com/@jorikkleen",
+    "page": "https://unsplash.com/photos/grayscale-photography-of-stage-with-lights-x1yHtSg1DsQ",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "renovation",
+    "description": "I entered once in one building that is renovating and I noticed the contrast between renovated part of the building and the part that is not finished yet. And there it is: two different worlds on one place.",
+    "photographer": "Milivoj Kuhar",
+    "profile": "https://unsplash.com/@mimithecook",
+    "page": "https://unsplash.com/photos/man-climbing-on-ladder-inside-room-Te48TPzdcU8",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "sawdust",
+    "description": "a close up of a cake with white frosting",
+    "photographer": "Woliul Hasan",
+    "profile": "https://unsplash.com/@shotbywoliul",
+    "page": "https://unsplash.com/photos/a-close-up-of-a-cake-with-white-frosting-gK29a0if9MM",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "timber",
+    "description": "wood parquet",
+    "photographer": "Nathan Dumlao",
+    "profile": "https://unsplash.com/@nate_dumlao",
+    "page": "https://unsplash.com/photos/wood-parquet-J2gEgTPM_OA",
+    "license": "Unsplash License"
   }
 ]

@@ -4,7 +4,7 @@ import { Curve } from './Curve'
 import { RailNode } from './Rail'
 import type { WorkItem } from '../lib/site'
 
-/** Empty plate — never a stock photo of somebody else's job. */
+/** Nothing to show at all — no real photo and no stand-in. */
 function Plate({ label }: { label?: string }) {
   return (
     <div className="flex h-full w-full items-center justify-center bg-graphite/60">
@@ -16,17 +16,56 @@ function Plate({ label }: { label?: string }) {
   )
 }
 
-function Shot({ src, alt, className = '' }: { src?: string; alt: string; className?: string }) {
+/**
+ * A real photo if Matt has one, otherwise a stand-in that says so.
+ *
+ * The badge is the whole point. Stock photography captioned as his work
+ * would be a false claim to somebody deciding whether to hire him, and it
+ * disappears on its own the moment a real file lands in `images`.
+ */
+function Shot({
+  src,
+  sample,
+  alt,
+  className = '',
+}: {
+  src?: string
+  sample?: string
+  alt: string
+  className?: string
+}) {
+  const url = src ?? sample
+  const isSample = !src && !!sample
+
   return (
-    <div className={`overflow-hidden ${className}`}>
-      {src ? (
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-[1.04]"
-        />
+    <div className={`relative overflow-hidden ${className}`}>
+      {url ? (
+        <>
+          <img
+            src={url}
+            alt={isSample ? `Sample image — not Sweetfix work` : alt}
+            loading="lazy"
+            decoding="async"
+            className={`h-full w-full object-cover transition-transform duration-[1.4s] ease-out group-hover:scale-[1.04] ${
+              isSample ? 'saturate-[0.88]' : ''
+            }`}
+          />
+          {isSample && (
+            <>
+              {/* A light tint toward the palette, no more. The badge
+                  carries the honesty; burying the photo would only stop the
+                  design being judged on what it will actually look like. */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{ background: 'linear-gradient(180deg, rgba(19,20,22,0.10), rgba(19,20,22,0.34))' }}
+              />
+              <span className="absolute left-3 top-3 border border-bone/25 bg-ink/75 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-ash backdrop-blur">
+                Sample
+              </span>
+            </>
+          )}
+        </>
       ) : (
         <Plate label="Photo coming" />
       )}
@@ -50,6 +89,7 @@ function Row({ item, index, total }: { item: WorkItem; index: number; total: num
         <div className={`relative ${flip ? 'lg:order-2 lg:pl-12' : 'lg:pr-12'}`}>
           <Shot
             src={item.images[0]}
+            sample={item.samples?.[0]}
             alt={`${item.title} — ${item.location}`}
             className="aspect-[4/3] w-full"
           />
@@ -62,6 +102,7 @@ function Row({ item, index, total }: { item: WorkItem; index: number; total: num
           >
             <Shot
               src={item.images[1]}
+              sample={item.samples?.[1]}
               alt={`${item.title}, detail`}
               className="aspect-square w-full"
             />

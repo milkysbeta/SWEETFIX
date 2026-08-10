@@ -1,0 +1,194 @@
+@import 'tailwindcss';
+@import './fonts.css';
+
+@theme {
+  /* Flat dark greys. No gradient on the ground — the depth comes from the
+     particle field behind and the frosted column in front, not from the
+     background itself. */
+  /* The ground sits darker than the column so the column reads as a lit
+     panel rather than a slightly different shade of the same thing. */
+  --color-ink: #131416;
+  --color-pitch: #1a1c1f;
+  --color-charcoal: #2e3238; /* the column */
+  --color-graphite: #383c43;
+  --color-slate: #4b5058;
+
+  /* Timber — the warmth. Used sparingly, like oiled wood against steel. */
+  --color-timber: #c08a4b;
+  --color-timber-lit: #e0aa6b;
+  --color-walnut: #6b4a2c;
+  --color-oak: #a97e4e;
+
+  /* Type */
+  --color-bone: #ece8e1;
+  --color-ash: #8d8b86;
+  --color-dust: #5b5955;
+
+  --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', ui-serif, Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/*
+ * Display type is light and large rather than heavy and loud. The weight
+ * does the opposite of what a tradie site usually does, which is the point —
+ * restraint reads as expensive.
+ */
+@utility display-xl {
+  font-family: var(--font-display);
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.92;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-weight: 250;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
+}
+
+/* Reserved for one or two moments per page — never a whole block. */
+@utility serif-accent {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Keeps anchored sections clear of the fixed header. */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-feature-settings: 'ss01', 'cv01';
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-timber);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-timber);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-dust);
+}
+
+/* A hairline that fades out at both ends — used between sections. */
+@utility rule-fade {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--color-slate) 90%, transparent),
+    transparent
+  );
+}
+
+/*
+ * Wood grain. Stretched fractal noise reads as long grain running down the
+ * column — generated rather than a photograph, so it costs about a kilobyte
+ * and never tiles visibly. Walnut-tinted and very faint: it should be felt
+ * more than seen, the way oiled timber catches light.
+ */
+.grain-wood::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.5;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='900'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9 0.012' numOctaves='4' seed='7'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='600' height='900' filter='url(%23w)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 600px 900px;
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translateX(-2px);
+  }
+  20%,
+  80% {
+    transform: translateX(4px);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translateX(-6px);
+  }
+  40%,
+  60% {
+    transform: translateX(6px);
+  }
+}
+
+/* Very fine film grain, drifting. Keeps large flat dark areas from banding
+   and stops the noise reading as a static texture stuck to the screen. */
+@keyframes grain-drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-3%, 2%, 0);
+  }
+  50% {
+    transform: translate3d(2%, -3%, 0);
+  }
+  75% {
+    transform: translate3d(-2%, -2%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.grain::after {
+  content: '';
+  position: fixed;
+  inset: -6%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-drift 14s steps(4, end) infinite;
+}

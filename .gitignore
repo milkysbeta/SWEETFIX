@@ -4,3 +4,6 @@ dist
 *.local
 .vite
 *.tsbuildinfo
+
+# Preview build output
+dist-artifact/

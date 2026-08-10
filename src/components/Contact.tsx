@@ -22,7 +22,7 @@ export function Contact({ onEnquire }: { onEnquire: () => void }) {
         <div className="mt-12 flex flex-wrap gap-3">
           <button
             onClick={onEnquire}
-            className="rounded-full bg-bone px-8 py-4 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-transform duration-300 hover:scale-[1.02]"
+            className="rounded-[2px] bg-bone px-8 py-4 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-transform duration-300 hover:scale-[1.02]"
           >
             Open the enquiry form
           </button>
@@ -30,13 +30,13 @@ export function Contact({ onEnquire }: { onEnquire: () => void }) {
             href={waHello}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber"
+            className="rounded-[2px] border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber"
           >
             WhatsApp
           </a>
           <a
             href={`tel:${site.phone}`}
-            className="rounded-full border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber"
+            className="rounded-[2px] border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber"
           >
             {site.phoneDisplay}
           </a>
@@ -44,7 +44,7 @@ export function Contact({ onEnquire }: { onEnquire: () => void }) {
       </Reveal>
 
       <Reveal delay={0.14}>
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-slate/40 bg-slate/40 sm:grid-cols-3">
+        <div className="mt-16 grid gap-px overflow-hidden rounded-[3px] border border-slate/40 bg-slate/40 sm:grid-cols-3">
           {[
             { k: 'Phone', v: site.phoneDisplay, href: `tel:${site.phone}` },
             { k: 'Email', v: site.emailFallback, href: `mailto:${site.emailFallback}` },

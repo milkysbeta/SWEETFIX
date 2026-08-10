@@ -17,7 +17,7 @@ const tiles = [
 function Tile({ src, caption, index }: { src: string; caption: string; index: number }) {
   return (
     <Reveal delay={index * 0.08}>
-      <figure className="group relative overflow-hidden rounded-xl border border-slate/40 bg-graphite">
+      <figure className="group relative overflow-hidden rounded-[3px] border border-slate/40 bg-graphite">
         <div className="aspect-[5/4] overflow-hidden">
           <img
             src={src}

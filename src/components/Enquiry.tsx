@@ -69,7 +69,7 @@ export function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.99 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="my-auto w-full max-w-2xl rounded-2xl border border-slate/60 bg-charcoal shadow-2xl"
+            className="my-auto w-full max-w-2xl rounded-[3px] border border-slate/60 bg-charcoal shadow-2xl"
           >
             <div className="flex items-start justify-between gap-6 border-b border-slate/50 p-7 sm:p-9">
               <div>
@@ -88,7 +88,7 @@ export function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => 
               <button
                 onClick={onClose}
                 aria-label="Close"
-                className="shrink-0 rounded-full border border-slate/60 p-2.5 text-ash transition-colors hover:border-bone/40 hover:text-bone"
+                className="shrink-0 rounded-[2px] border border-slate/60 p-2.5 text-ash transition-colors hover:border-bone/40 hover:text-bone"
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
                   <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" />
@@ -110,13 +110,13 @@ export function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => 
                     href={waHello}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="rounded-full border border-slate px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.16em] text-bone hover:border-timber hover:text-timber"
+                    className="rounded-[2px] border border-slate px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.16em] text-bone hover:border-timber hover:text-timber"
                   >
                     WhatsApp
                   </a>
                   <button
                     onClick={onClose}
-                    className="rounded-full bg-bone px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink"
+                    className="rounded-[2px] bg-bone px-7 py-3.5 font-mono text-[11px] uppercase tracking-[0.16em] text-ink"
                   >
                     Close
                   </button>
@@ -173,7 +173,7 @@ export function EnquiryModal({ open, onClose }: { open: boolean; onClose: () => 
                 </Field>
 
                 {state === 'error' && (
-                  <p className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-[14px] text-red-300">
+                  <p className="rounded-[2px] border border-red-500/40 bg-red-500/10 px-4 py-3 text-[14px] text-red-300">
                     {error}{' '}
                     <a href={`tel:${site.phone}`} className="underline">
                       Or just call {site.phoneDisplay}.

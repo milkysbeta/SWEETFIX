@@ -16,7 +16,7 @@ export function Services({ onEnquire }: { onEnquire: () => void }) {
         </p>
       </Reveal>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-slate/40 bg-slate/40 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-16 grid gap-px overflow-hidden rounded-[3px] border border-slate/40 bg-slate/40 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((s, i) => (
           <Reveal key={s.id} delay={i * 0.05}>
             <article className="group relative h-full bg-ink p-8 transition-colors duration-500 hover:bg-charcoal">
@@ -31,7 +31,7 @@ export function Services({ onEnquire }: { onEnquire: () => void }) {
                 {s.items.map((it) => (
                   <li
                     key={it}
-                    className="rounded-full border border-slate/60 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-dust transition-colors duration-500 group-hover:border-walnut group-hover:text-oak"
+                    className="rounded-[2px] border border-slate/60 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-dust transition-colors duration-500 group-hover:border-walnut group-hover:text-oak"
                   >
                     {it}
                   </li>

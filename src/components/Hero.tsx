@@ -23,7 +23,7 @@ export function Hero({ onEnquire }: { onEnquire: () => void }) {
       {/* End grain as the ground, the way the live-edge reference does it:
           the material fills the frame and the type sits on top of it. */}
       <div
-        className="pointer-events-none absolute inset-0 overflow-hidden rounded-[28px]"
+        className="pointer-events-none absolute inset-0 overflow-hidden rounded-[3px]"
         style={{ transform: reduced ? undefined : `translate3d(0, ${y * 0.06}px, 0)` }}
       >
         <WoodGrain className="h-full w-full object-cover" />
@@ -33,7 +33,7 @@ export function Hero({ onEnquire }: { onEnquire: () => void }) {
           heavier on the left where the type sits, opening up on the right. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-[28px]"
+        className="pointer-events-none absolute inset-0 rounded-[3px]"
         style={{
           background:
             'linear-gradient(100deg, rgba(19,20,22,0.93) 0%, rgba(19,20,22,0.80) 34%, rgba(19,20,22,0.34) 62%, rgba(19,20,22,0.22) 100%)',
@@ -45,7 +45,7 @@ export function Hero({ onEnquire }: { onEnquire: () => void }) {
           phones only — the type has to win. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-[28px] sm:hidden"
+        className="pointer-events-none absolute inset-0 rounded-[3px] sm:hidden"
         style={{
           background:
             'linear-gradient(180deg, rgba(19,20,22,0.88) 0%, rgba(19,20,22,0.74) 45%, rgba(19,20,22,0.66) 100%)',
@@ -119,7 +119,7 @@ export function Hero({ onEnquire }: { onEnquire: () => void }) {
         >
           <button
             onClick={onEnquire}
-            className="rounded-full bg-bone px-9 py-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-transform duration-500 hover:scale-[1.02]"
+            className="rounded-[2px] bg-bone px-9 py-4 font-mono text-[11px] uppercase tracking-[0.18em] text-ink transition-transform duration-500 hover:scale-[1.02]"
           >
             Tell me about the job
           </button>
@@ -127,7 +127,7 @@ export function Hero({ onEnquire }: { onEnquire: () => void }) {
             href={waHello}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-slate/70 px-9 py-4 font-mono text-[11px] uppercase tracking-[0.18em] text-bone transition-colors duration-500 hover:border-timber hover:text-timber"
+            className="rounded-[2px] border border-slate/70 px-9 py-4 font-mono text-[11px] uppercase tracking-[0.18em] text-bone transition-colors duration-500 hover:border-timber hover:text-timber"
           >
             WhatsApp
           </a>

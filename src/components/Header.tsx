@@ -43,13 +43,13 @@ export function Header({ onEnquire }: { onEnquire: () => void }) {
           <div className="flex items-center gap-2">
             <a
               href={`tel:${site.phone}`}
-              className="hidden rounded-full border border-slate/70 px-4 py-2 font-mono text-[11px] tracking-[0.14em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber sm:block"
+              className="hidden rounded-[2px] border border-slate/70 px-4 py-2 font-mono text-[11px] tracking-[0.14em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber sm:block"
             >
               {site.phoneDisplay}
             </a>
             <button
               onClick={onEnquire}
-              className="rounded-full bg-timber px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink transition-all duration-300 hover:bg-timber-lit"
+              className="rounded-[2px] bg-timber px-5 py-2.5 font-mono text-[11px] font-medium uppercase tracking-[0.16em] text-ink transition-all duration-300 hover:bg-timber-lit"
             >
               Enquire
             </button>
@@ -57,7 +57,7 @@ export function Header({ onEnquire }: { onEnquire: () => void }) {
               onClick={() => setOpen((v) => !v)}
               aria-label="Menu"
               aria-expanded={open}
-              className="ml-1 grid h-9 w-9 place-items-center rounded-full border border-slate/70 md:hidden"
+              className="ml-1 grid h-9 w-9 place-items-center rounded-[2px] border border-slate/70 md:hidden"
             >
               <span className="relative block h-[9px] w-4">
                 <span

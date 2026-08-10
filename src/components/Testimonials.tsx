@@ -32,7 +32,7 @@ export function Testimonials() {
               </p>
               <a
                 href="#/reviews"
-                className="mt-9 inline-block rounded-full border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber"
+                className="mt-9 inline-block rounded-[2px] border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone transition-colors duration-300 hover:border-timber hover:text-timber"
               >
                 Leave a review
               </a>
@@ -42,7 +42,7 @@ export function Testimonials() {
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, i) => (
               <Reveal key={t.name + i} delay={i * 0.06}>
-                <figure className="h-full rounded-xl border border-slate/40 bg-charcoal p-8">
+                <figure className="h-full rounded-[3px] border border-slate/40 bg-charcoal p-8">
                   <blockquote className="text-lg leading-relaxed text-bone">“{t.quote}”</blockquote>
                   <figcaption className="mt-6 border-t border-slate/40 pt-5">
                     <p className="font-display text-sm font-semibold uppercase tracking-wider text-bone">

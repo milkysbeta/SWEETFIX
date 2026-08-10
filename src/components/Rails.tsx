@@ -52,7 +52,7 @@ export function ScrollDots() {
           className="group relative grid h-3 w-3 place-items-center"
         >
           <span
-            className={`rounded-full transition-all duration-500 ${
+            className={`rounded-[2px] transition-all duration-500 ${
               active === s.id ? 'h-2.5 w-2.5 bg-timber' : 'h-1.5 w-1.5 bg-bone/25 group-hover:bg-bone/60'
             }`}
           />

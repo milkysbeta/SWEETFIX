@@ -13,7 +13,7 @@ import type { ReactNode } from 'react'
 export function Column({ children }: { children: ReactNode }) {
   return (
     <div className="relative mx-auto w-full max-w-[1180px] px-4 sm:px-6">
-      <div className="grain-wood relative rounded-[28px] border border-bone/[0.07] bg-charcoal/75 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl">
+      <div className="grain-wood relative rounded-[3px] border border-bone/[0.07] bg-charcoal/75 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)] backdrop-blur-2xl">
         <div className="relative z-[1]">{children}</div>
       </div>
     </div>

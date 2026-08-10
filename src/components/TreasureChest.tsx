@@ -67,7 +67,7 @@ function Hologram({ children }: { children: React.ReactNode }) {
           background: 'radial-gradient(60% 60% at 50% 50%, rgba(80,220,255,0.20), transparent 70%)',
         }}
       />
-      <div className="relative overflow-hidden rounded-xl border border-cyan-300/25 bg-cyan-500/[0.06] px-6 py-5 backdrop-blur-sm">
+      <div className="relative overflow-hidden rounded-[3px] border border-cyan-300/25 bg-cyan-500/[0.06] px-6 py-5 backdrop-blur-sm">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-45"
@@ -182,14 +182,14 @@ export function TreasureChest() {
                           onChange={(e) => setEntry(e.target.value)}
                           placeholder="Enter the code"
                           aria-label="Treasure hunt code"
-                          className={`min-w-0 flex-1 rounded-lg border bg-ink/50 px-4 py-3 font-mono text-sm uppercase tracking-[0.18em] text-cyan-100 placeholder:normal-case placeholder:tracking-normal placeholder:text-cyan-200/30 focus:outline-none ${
+                          className={`min-w-0 flex-1 rounded-[2px] border bg-ink/50 px-4 py-3 font-mono text-sm uppercase tracking-[0.18em] text-cyan-100 placeholder:normal-case placeholder:tracking-normal placeholder:text-cyan-200/30 focus:outline-none ${
                             wrong ? 'border-red-400/70' : 'border-cyan-300/30 focus:border-cyan-300/70'
                           }`}
                           style={wrong ? { animation: 'shake 0.4s' } : undefined}
                         />
                         <button
                           type="submit"
-                          className="shrink-0 rounded-lg border border-cyan-300/40 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-cyan-100 transition-colors hover:bg-cyan-400/10"
+                          className="shrink-0 rounded-[2px] border border-cyan-300/40 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.16em] text-cyan-100 transition-colors hover:bg-cyan-400/10"
                         >
                           Open
                         </button>

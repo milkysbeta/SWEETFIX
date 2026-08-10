@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 const base =
-  'w-full rounded-lg border border-slate/60 bg-ink/60 px-4 py-3.5 text-[15px] text-bone placeholder:text-dust transition-colors duration-300 focus:border-timber focus:outline-none'
+  'w-full rounded-[2px] border border-slate/60 bg-ink/60 px-4 py-3.5 text-[15px] text-bone placeholder:text-dust transition-colors duration-300 focus:border-timber focus:outline-none'
 
 export function Field({
   label,
@@ -62,7 +62,7 @@ export function Submit({
     <button
       type="submit"
       disabled={state === 'sending' || state === 'sent'}
-      className="w-full rounded-full bg-timber px-8 py-4 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-all duration-300 hover:bg-timber-lit disabled:opacity-55 sm:w-auto"
+      className="w-full rounded-[2px] bg-timber px-8 py-4 font-mono text-[12px] font-medium uppercase tracking-[0.16em] text-ink transition-all duration-300 hover:bg-timber-lit disabled:opacity-55 sm:w-auto"
     >
       {state === 'sending' ? 'Sending…' : state === 'sent' ? 'Sent — thanks' : children}
     </button>

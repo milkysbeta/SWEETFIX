@@ -40,7 +40,7 @@ export function CutOut({
               side === 'left' ? 'justify-start' : 'justify-end'
             }`}
           >
-            <div className="flex h-full max-h-[34rem] w-full max-w-xs flex-col items-center justify-center rounded-2xl border border-dashed border-slate/70 bg-gradient-to-b from-charcoal/60 to-transparent p-8 text-center">
+            <div className="flex h-full max-h-[34rem] w-full max-w-xs flex-col items-center justify-center rounded-[3px] border border-dashed border-slate/70 bg-gradient-to-b from-charcoal/60 to-transparent p-8 text-center">
               <div className="h-12 w-12 rounded-full border border-dashed border-slate" />
               <p className="label mt-5 leading-relaxed">{label}</p>
               <p className="mt-3 font-mono text-[10px] leading-relaxed tracking-[0.08em] text-dust/70">

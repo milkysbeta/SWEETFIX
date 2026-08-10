@@ -65,7 +65,7 @@ export function About() {
         <Reveal delay={0.1} className="lg:sticky lg:top-28 lg:self-start">
           {/* TODO(matt): swap for a photo of you on site —
               public/images/matt.jpg — one good shot beats ten of finished walls. */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-slate/40 bg-gradient-to-br from-charcoal via-ink to-charcoal">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[3px] border border-slate/40 bg-gradient-to-br from-charcoal via-ink to-charcoal">
             <div
               aria-hidden
               className="absolute inset-0"

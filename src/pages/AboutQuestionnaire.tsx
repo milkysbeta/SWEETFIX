@@ -192,7 +192,7 @@ export function AboutQuestionnaire() {
               ))}
 
               {state === 'error' && (
-                <p className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-[14px] text-red-300">
+                <p className="rounded-[2px] border border-red-500/40 bg-red-500/10 px-4 py-3 text-[14px] text-red-300">
                   {error}
                 </p>
               )}

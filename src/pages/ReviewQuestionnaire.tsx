@@ -111,7 +111,7 @@ export function ReviewQuestionnaire() {
             </p>
             <a
               href="#top"
-              className="mt-10 inline-block rounded-full border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone hover:border-timber hover:text-timber"
+              className="mt-10 inline-block rounded-[2px] border border-slate px-8 py-4 font-mono text-[12px] uppercase tracking-[0.16em] text-bone hover:border-timber hover:text-timber"
             >
               Back to the site
             </a>
@@ -175,7 +175,7 @@ export function ReviewQuestionnaire() {
               </Field>
 
               {state === 'error' && (
-                <p className="rounded-lg border border-red-500/40 bg-red-500/10 px-4 py-3 text-[14px] text-red-300">
+                <p className="rounded-[2px] border border-red-500/40 bg-red-500/10 px-4 py-3 text-[14px] text-red-300">
                   {error}
                 </p>
               )}

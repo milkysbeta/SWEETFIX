@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { Logo } from './Logo'
+import { WoodGrain } from './WoodGrain'
 import { site, waHello } from '../lib/site'
 import { useReducedMotion, useScrollY } from '../lib/hooks'
 
@@ -19,15 +20,35 @@ export function Hero({ onEnquire }: { onEnquire: () => void }) {
 
   return (
     <section id="top" className="relative flex min-h-[86svh] items-center overflow-hidden">
-      {/* The particle field lives behind the whole page — see App.
-          What's left here is the warm light raking across it. */}
+      {/* End grain as the ground, the way the live-edge reference does it:
+          the material fills the frame and the type sits on top of it. */}
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden rounded-[28px]"
+        style={{ transform: reduced ? undefined : `translate3d(0, ${y * 0.06}px, 0)` }}
+      >
+        <WoodGrain className="h-full w-full object-cover" />
+      </div>
+
+      {/* Scrim. The grain has to stay felt but never fight the headline —
+          heavier on the left where the type sits, opening up on the right. */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 rounded-[28px]"
         style={{
           background:
-            'radial-gradient(90% 70% at 15% 5%, rgba(192,138,75,0.10), transparent 60%)',
-          transform: reduced ? undefined : `translate3d(0, ${y * 0.1}px, 0)`,
+            'linear-gradient(100deg, rgba(19,20,22,0.93) 0%, rgba(19,20,22,0.80) 34%, rgba(19,20,22,0.34) 62%, rgba(19,20,22,0.22) 100%)',
+        }}
+      />
+
+      {/* On a phone that angled scrim has almost no width to work across, so
+          the grain runs straight under the headline. Second scrim, vertical,
+          phones only — the type has to win. */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-[28px] sm:hidden"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(19,20,22,0.88) 0%, rgba(19,20,22,0.74) 45%, rgba(19,20,22,0.66) 100%)',
         }}
       />
 

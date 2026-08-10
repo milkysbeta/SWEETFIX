@@ -4,13 +4,16 @@
  *
  * These are placeholders so the design can be judged against real
  * photography instead of grey rectangles. They are NOT Matt's work — the
- * site marks every one as a sample, and the marker disappears the moment a
- * real photo replaces it.
+ * site marks every one as a sample, and the marker goes the moment a real
+ * photo replaces it.
  *
- * Commons images carry a licence each. Every one used is recorded in
- * CREDITS.json with its licence and source page, because most are CC BY-SA
- * and that requires attribution. Openverse was tried first but its CC0
- * filter returned almost nothing usable for building work.
+ * Reads Commons *categories* rather than running a text search. Search
+ * relevance on Commons is poor for this subject — it returned a Victorian
+ * engraving for "timber framing" and a covered bridge for "decking".
+ * Categories are curated by hand, so precision is far higher.
+ *
+ * Every image's licence, author and source page goes into CREDITS.json.
+ * Most are CC BY / CC BY-SA, which require attribution.
  *
  *   node scripts/fetch-samples.mjs
  */
@@ -21,41 +24,45 @@ const OUT = new URL('../public/images/samples/', import.meta.url).pathname
 const API = 'https://commons.wikimedia.org/w/api.php'
 const UA = 'SweetfixSiteBuild/1.0 (https://sweetfix.nz)'
 
+/** Several categories per slot — the first usable hit wins. */
 const wanted = [
-  { slug: 'framing', q: 'timber frame house under construction' },
-  { slug: 'deck', q: 'timber decking wooden deck house' },
-  { slug: 'tools', q: 'carpenter hand tools workbench' },
-  { slug: 'painting', q: 'painting interior wall paint roller' },
-  { slug: 'stage', q: 'festival outdoor stage structure' },
-  { slug: 'renovation', q: 'house interior renovation building' },
-  { slug: 'workshop', q: 'woodworking workshop bench timber' },
-  { slug: 'roof', q: 'roof truss timber construction' },
+  { slug: 'framing', cats: ['Timber framing', 'Timber frame houses'] },
+  { slug: 'construction', cats: ['House construction', 'Residential construction'] },
+  { slug: 'tools', cats: ['Carpentry tools', 'Woodworking hand tools'] },
+  { slug: 'stage', cats: ['Concert stages', 'Festival stages'] },
+  { slug: 'deck', cats: ['Wooden decks', 'Terraces (architecture)', 'Wooden balconies'] },
+  { slug: 'workshop', cats: ['Carpentry', 'Joinery', 'Woodworking'] },
+  { slug: 'timber', cats: ['Wooden boards', 'Planks', 'Sawn timber'] },
 ]
 
-/** Licences we will actually ship, best first. GFDL and NC are excluded. */
-const OK = [/public domain/i, /^CC0/i, /^CC BY 4/i, /^CC BY 3/i, /^CC BY 2/i, /^CC BY-SA/i]
-const rank = (lic) => {
-  const i = OK.findIndex((re) => re.test(lic))
-  return i === -1 ? 99 : i
+// GFDL is awkward to comply with on a website, and NC forbids commercial use.
+const BAD = /GFDL|NonCommercial|-NC|Fair use/i
+
+async function api(params) {
+  const url = `${API}?${new URLSearchParams({ format: 'json', ...params })}`
+  const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } })
+  if (!res.ok) throw new Error(`${res.status}`)
+  return res.json()
 }
 
-async function search(q) {
-  const url =
-    `${API}?action=query&format=json&origin=*` +
-    `&generator=search&gsrsearch=${encodeURIComponent('filetype:bitmap ' + q)}` +
-    `&gsrnamespace=6&gsrlimit=12&prop=imageinfo` +
-    `&iiprop=url|size|extmetadata&iiurlwidth=1800`
+async function fromCategory(cat) {
+  const data = await api({
+    action: 'query',
+    generator: 'categorymembers',
+    gcmtitle: `Category:${cat}`,
+    gcmtype: 'file',
+    gcmlimit: '40',
+    prop: 'imageinfo',
+    iiprop: 'url|size|extmetadata',
+    iiurlwidth: '1800',
+  })
 
-  const res = await fetch(url, { headers: { 'User-Agent': UA, Accept: 'application/json' } })
-  if (!res.ok) throw new Error(`search: ${res.status}`)
-  const data = await res.json()
-  const pages = Object.values(data?.query?.pages ?? {})
+  const strip = (v) => (v?.value ?? '').replace(/<[^>]*>/g, '').trim()
 
-  return pages
+  return Object.values(data?.query?.pages ?? {})
     .map((p) => {
       const ii = p.imageinfo?.[0] ?? {}
       const meta = ii.extmetadata ?? {}
-      const strip = (v) => (v?.value ?? '').replace(/<[^>]*>/g, '').trim()
       return {
         title: p.title.replace(/^File:/, ''),
         thumb: ii.thumburl,
@@ -64,36 +71,47 @@ async function search(q) {
         license: strip(meta.LicenseShortName) || 'unknown',
         artist: strip(meta.Artist) || null,
         page: ii.descriptionurl,
+        category: cat,
       }
     })
-    // Landscape and large enough that a 4:3 crop still looks sharp.
-    .filter((r) => r.thumb && r.width >= 1600 && r.width > r.height)
-    .filter((r) => rank(r.license) < 99)
-    .sort((a, b) => rank(a.license) - rank(b.license) || b.width - a.width)
+    // Landscape, and large enough that a 4:3 crop stays sharp.
+    .filter((r) => r.thumb && r.width >= 1800 && r.width > r.height * 1.15)
+    .filter((r) => !BAD.test(r.license))
 }
 
 await mkdir(OUT, { recursive: true })
 const manifest = []
 
-for (const { slug, q } of wanted) {
-  try {
-    const hits = await search(q)
-    let saved = false
-    for (const hit of hits.slice(0, 5)) {
-      const img = await fetch(hit.thumb, { headers: { 'User-Agent': UA } })
-      if (!img.ok) continue
-      const buf = Buffer.from(await img.arrayBuffer())
-      if (buf.length < 60_000) continue
-      await writeFile(join(OUT, `${slug}.jpg`), buf)
-      manifest.push({ slug, ...hit, thumb: undefined })
-      console.log(`${slug.padEnd(11)} ${(buf.length / 1024).toFixed(0)}kB  ${hit.license.padEnd(12)} ${hit.title.slice(0, 52)}`)
-      saved = true
-      break
+for (const { slug, cats } of wanted) {
+  let saved = false
+  for (const cat of cats) {
+    if (saved) break
+    let hits = []
+    try {
+      hits = await fromCategory(cat)
+    } catch (err) {
+      console.log(`${slug.padEnd(13)} ${cat}: ${err.message}`)
+      continue
     }
-    if (!saved) console.log(`${slug.padEnd(11)} no usable result`)
-  } catch (err) {
-    console.log(`${slug.padEnd(11)} FAILED: ${err.message}`)
+    for (const hit of hits.slice(0, 6)) {
+      try {
+        const img = await fetch(hit.thumb, { headers: { 'User-Agent': UA } })
+        if (!img.ok) continue
+        const buf = Buffer.from(await img.arrayBuffer())
+        if (buf.length < 80_000) continue
+        await writeFile(join(OUT, `${slug}.jpg`), buf)
+        manifest.push({ ...hit, slug, thumb: undefined })
+        console.log(
+          `${slug.padEnd(13)} ${(buf.length / 1024).toFixed(0).padStart(4)}kB  ${hit.license.padEnd(14)} ${hit.title.slice(0, 46)}`,
+        )
+        saved = true
+        break
+      } catch {
+        /* next candidate */
+      }
+    }
   }
+  if (!saved) console.log(`${slug.padEnd(13)} nothing usable`)
 }
 
 await writeFile(join(OUT, 'CREDITS.json'), JSON.stringify(manifest, null, 2) + '\n')

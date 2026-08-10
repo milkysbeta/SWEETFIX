@@ -1,47 +1,72 @@
 [
   {
-    "slug": "framing",
-    "title": "PSM V28 D663 Side framing of a japanese house under construction.jpg",
-    "width": 1787,
-    "height": 1362,
+    "title": "Centralne Muzeum Morskie and SS Sołdek in Gdańsk.jpg",
+    "width": 3963,
+    "height": 2680,
+    "license": "CC BY-SA 3.0",
+    "artist": "DerHexer",
+    "page": "https://commons.wikimedia.org/wiki/File:Centralne_Muzeum_Morskie_and_SS_So%C5%82dek_in_Gda%C5%84sk.jpg",
+    "category": "Timber framing",
+    "slug": "framing"
+  },
+  {
+    "title": "Byggnadsstomme2.jpg",
+    "width": 2778,
+    "height": 2111,
+    "license": "CC BY-SA 3.0",
+    "artist": "Entheta",
+    "page": "https://commons.wikimedia.org/wiki/File:Byggnadsstomme2.jpg",
+    "category": "House construction",
+    "slug": "construction"
+  },
+  {
+    "title": "Angle in metall.jpg",
+    "width": 2816,
+    "height": 2112,
+    "license": "CC BY-SA 3.0",
+    "artist": "Boatbuilder",
+    "page": "https://commons.wikimedia.org/wiki/File:Angle_in_metall.jpg",
+    "category": "Carpentry tools",
+    "slug": "tools"
+  },
+  {
+    "title": "2008-08 Przystanek Woodstock 3.jpg",
+    "width": 3070,
+    "height": 1404,
+    "license": "CC BY 3.0",
+    "artist": "Ralf Lotys (Sicherlich)",
+    "page": "https://commons.wikimedia.org/wiki/File:2008-08_Przystanek_Woodstock_3.jpg",
+    "category": "Concert stages",
+    "slug": "stage"
+  },
+  {
+    "title": "Deck over the mud on Brighouse Footpath 34-10, Hove Edge - geograph.org.uk - 7292802.jpg",
+    "width": 2048,
+    "height": 1536,
+    "license": "CC BY-SA 2.0",
+    "artist": "Humphrey Bolton",
+    "page": "https://commons.wikimedia.org/wiki/File:Deck_over_the_mud_on_Brighouse_Footpath_34-10,_Hove_Edge_-_geograph.org.uk_-_7292802.jpg",
+    "category": "Wooden decks",
+    "slug": "deck"
+  },
+  {
+    "title": "Betsy's house - porch scroll work.jpg",
+    "width": 3072,
+    "height": 2304,
     "license": "Public domain",
-    "artist": "Unknown authorUnknown author",
-    "page": "https://commons.wikimedia.org/wiki/File:PSM_V28_D663_Side_framing_of_a_japanese_house_under_construction.jpg"
+    "artist": "Jas9494",
+    "page": "https://commons.wikimedia.org/wiki/File:Betsy%27s_house_-_porch_scroll_work.jpg",
+    "category": "Carpentry",
+    "slug": "workshop"
   },
   {
-    "slug": "deck",
-    "title": "Nelson Mtn. covered bridge, Oregon - Flickr - Bonnie Moreland (free images).jpg",
-    "width": 5648,
-    "height": 3361,
-    "license": "Public domain",
-    "artist": "Bonnie Moreland from Oregon, United States",
-    "page": "https://commons.wikimedia.org/wiki/File:Nelson_Mtn._covered_bridge,_Oregon_-_Flickr_-_Bonnie_Moreland_(free_images).jpg"
-  },
-  {
-    "slug": "stage",
-    "title": "Rock the Garden stage, June 2014.jpg",
-    "width": 4160,
-    "height": 3120,
-    "license": "CC BY 4.0",
-    "artist": "Collin Knopp-Schwyn",
-    "page": "https://commons.wikimedia.org/wiki/File:Rock_the_Garden_stage,_June_2014.jpg"
-  },
-  {
-    "slug": "renovation",
-    "title": "Under Renovation house in Mid-City New Orleans - 01.jpg",
-    "width": 3955,
-    "height": 2966,
-    "license": "CC BY 2.0",
-    "artist": "Bart Everson",
-    "page": "https://commons.wikimedia.org/wiki/File:Under_Renovation_house_in_Mid-City_New_Orleans_-_01.jpg"
-  },
-  {
-    "slug": "roof",
-    "title": "VIEW OF TRICOMPOSITE ROOF STRUCTURE. TOP CHORDS ARE TIMBER. TENSION RODS (THIN METAL RODS EXTENDING DIAGONALLY FROM THE HORIZONTAL TIMBER BRACE) ARE WROUGHT IRON. SOLID CRUCIFORM HAER MD,4-BALT,143-7.tif",
-    "width": 5326,
-    "height": 3822,
-    "license": "Public domain",
-    "artist": "Jack Boucher",
-    "page": "https://commons.wikimedia.org/wiki/File:VIEW_OF_TRICOMPOSITE_ROOF_STRUCTURE._TOP_CHORDS_ARE_TIMBER._TENSION_RODS_(THIN_METAL_RODS_EXTENDING_DIAGONALLY_FROM_THE_HORIZONTAL_TIMBER_BRACE)_ARE_WROUGHT_IRON._SOLID_CRUCIFORM_HAER_MD,4-BALT,143-7.tif"
+    "title": "Czarny dab tarcica.jpg",
+    "width": 2018,
+    "height": 1079,
+    "license": "CC BY-SA 4.0",
+    "artist": "Mnemosine",
+    "page": "https://commons.wikimedia.org/wiki/File:Czarny_dab_tarcica.jpg",
+    "category": "Wooden boards",
+    "slug": "timber"
   }
 ]

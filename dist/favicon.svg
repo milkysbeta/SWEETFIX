@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 132">
+  <rect width="120" height="132" rx="24" fill="#0B0B0C"/>
+  <g fill="#ECE8E1">
+    <g transform="rotate(-21 60 102)">
+      <path d="M40 90 L22 90 L15 97 L15 107 L22 114 L40 114 L40 106 L28 106 L26 102 L28 98 L40 98 Z"/>
+      <rect x="38" y="97.5" width="60" height="9" rx="4.5"/>
+      <circle cx="99" cy="102" r="6"/>
+    </g>
+    <g transform="rotate(21 60 102)">
+      <rect x="22" y="97.5" width="62" height="9" rx="4.5"/>
+      <path d="M83 87 L99 87 L105 93 L105 111 L99 117 L83 117 Z"/>
+      <path d="M83 87 L83 96 L76 91 Z"/>
+      <path d="M83 117 L83 108 L76 113 Z"/>
+    </g>
+    <path d="M60 8 C39 8 25 22 25 42 C25 54 30 62 36 68 L36 78 C36 84 40 88 46 88 L74 88 C80 88 84 84 84 78 L84 68 C90 62 95 54 95 42 C95 22 81 8 60 8 Z"/>
+  </g>
+  <g fill="#0B0B0C">
+    <ellipse cx="45" cy="44" rx="10" ry="11"/>
+    <ellipse cx="75" cy="44" rx="10" ry="11"/>
+    <path d="M60 55 L52 68 L68 68 Z"/>
+    <rect x="38" y="72" width="44" height="2.5"/>
+    <rect x="50" y="74" width="2.5" height="14"/>
+    <rect x="58.75" y="74" width="2.5" height="14"/>
+    <rect x="67.5" y="74" width="2.5" height="14"/>
+  </g>
+</svg>

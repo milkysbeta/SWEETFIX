@@ -1,0 +1,82 @@
+[
+  {
+    "slug": "construction",
+    "description": "brown wooden building",
+    "photographer": "Avel Chuklanov",
+    "profile": "https://unsplash.com/@chuklanov",
+    "page": "https://unsplash.com/photos/brown-wooden-building-a0BEHFMKqTE",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "framing",
+    "description": "a wooden structure under construction under a blue sky",
+    "photographer": "Nate Johnston",
+    "profile": "https://unsplash.com/@natejohnston",
+    "page": "https://unsplash.com/photos/a-wooden-structure-under-construction-under-a-blue-sky-QtF2v8BP46I",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "deck",
+    "description": "a deck with chairs and tables on it next to a house",
+    "photographer": "Point3D Commercial Imaging Ltd.",
+    "profile": "https://unsplash.com/@3dottawa",
+    "page": "https://unsplash.com/photos/a-deck-with-chairs-and-tables-on-it-next-to-a-house-adTeb8MrQZs",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "tools",
+    "description": "stainless steel hand tool on black wooden table",
+    "photographer": "Tigran Hambardzumyan",
+    "profile": "https://unsplash.com/@tigranh47",
+    "page": "https://unsplash.com/photos/stainless-steel-hand-tool-on-black-wooden-table-02iCE7a_lLs",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "workshop",
+    "description": "Young carpenter working with cutter in his studio",
+    "photographer": "Craft Kitties",
+    "profile": "https://unsplash.com/@craftkitties",
+    "page": "https://unsplash.com/photos/a-person-cutting-a-piece-of-wood-GfYA6q5ESLI",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "painting",
+    "description": "black and white box on brown wooden table",
+    "photographer": "Karl Solano",
+    "profile": "https://unsplash.com/@karlsolano",
+    "page": "https://unsplash.com/photos/black-and-white-box-on-brown-wooden-table-eQ-8iUrb07g",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "stage",
+    "description": "grayscale photography of stage with lights",
+    "photographer": "Jorik Kleen",
+    "profile": "https://unsplash.com/@jorikkleen",
+    "page": "https://unsplash.com/photos/grayscale-photography-of-stage-with-lights-x1yHtSg1DsQ",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "renovation",
+    "description": "I entered once in one building that is renovating and I noticed the contrast between renovated part of the building and the part that is not finished yet. And there it is: two different worlds on one place.",
+    "photographer": "Milivoj Kuhar",
+    "profile": "https://unsplash.com/@mimithecook",
+    "page": "https://unsplash.com/photos/man-climbing-on-ladder-inside-room-Te48TPzdcU8",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "sawdust",
+    "description": "a close up of a cake with white frosting",
+    "photographer": "Woliul Hasan",
+    "profile": "https://unsplash.com/@shotbywoliul",
+    "page": "https://unsplash.com/photos/a-close-up-of-a-cake-with-white-frosting-gK29a0if9MM",
+    "license": "Unsplash License"
+  },
+  {
+    "slug": "timber",
+    "description": "wood parquet",
+    "photographer": "Nathan Dumlao",
+    "profile": "https://unsplash.com/@nate_dumlao",
+    "page": "https://unsplash.com/photos/wood-parquet-J2gEgTPM_OA",
+    "license": "Unsplash License"
+  }
+]

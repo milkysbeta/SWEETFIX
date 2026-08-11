@@ -14,7 +14,7 @@ export function About() {
         <div>
           <Reveal>
             <div className="relative"><GhostWord>Matt</GhostWord></div>
-          <SectionLabel index="06">About</SectionLabel>
+          <SectionLabel index="03">About</SectionLabel>
             <h2 className="display-lg text-[clamp(2.2rem,5.5vw,4.25rem)]">
               Matt
               <br />

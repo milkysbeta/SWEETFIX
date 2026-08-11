@@ -63,30 +63,6 @@ export const site = {
   },
 } as const
 
-/**
- * The treasure-hunt chest — a past project, shown here as proof of work.
- *
- * A locked chest with a hologram countdown, cracked by clues hidden around
- * the festival. This is a playable recreation of it: the point isn't the
- * prize, it's showing that Matt designs and builds interactive objects, not
- * just structures.
- *
- * TODO(matt): the code is readable in the page source, so keep it a demo
- * code rather than anything with a real prize attached.
- */
-export const treasure = {
-  /**
-   * Countdown target. The demo keeps a rolling deadline so the timer is
-   * always live — set a fixed ISO timestamp to pin it, or '' to hide it.
-   */
-  unlockAt: 'rolling',
-  /** Case- and space-insensitive. */
-  code: 'SHIPWRECK',
-  hint: 'Demo code: the name of the festival.',
-  reward:
-    'Cracked it. At the festival this opened for real — passes, jewellery, and collectible Shipwrecked coins inside.',
-} as const
-
 export type Service = {
   id: string
   title: string
@@ -99,50 +75,29 @@ export const services: Service[] = [
     id: 'fix-it',
     title: 'Fix-It Jobs',
     blurb:
-      'The list on the fridge. Doors that stick, taps that drip, shelves that were never going to hold. One visit, sorted properly.',
-    items: ['Small repairs', 'Doors & windows', 'Hanging & mounting', 'Flat-pack & furniture', 'Odd jobs'],
+      'The list on the fridge. Doors that stick, taps that drip, shelves that were never going to hold.',
+    items: ['Small repairs', 'Doors & windows', 'Hanging & mounting', 'Flat-pack', 'Odd jobs'],
   },
   {
     id: 'building',
     title: 'Building & Renovation',
     blurb:
       'Fifteen years across new builds and renovations. Comfortable running a job start to finish, or slotting into someone else’s.',
-    items: ['Renovations', 'New build carpentry', 'Framing & fit-out', 'Alterations', 'Project work'],
+    items: ['Renovations', 'New build carpentry', 'Framing & fit-out', 'Alterations'],
   },
   {
     id: 'outdoor',
-    title: 'Decks & Outdoor',
+    title: 'Decks, Outdoor & Painting',
     blurb:
-      'Decks, screens, gates, fences. Built for Central Otago weather, and levelled like it matters — because it does.',
-    items: ['Decks', 'Fences & gates', 'Screens & pergolas', 'Outdoor repairs'],
+      'Built for Central Otago weather and levelled like it matters. Plus the patching and finishing that decides whether a room reads as done.',
+    items: ['Decks', 'Fences & gates', 'Screens & pergolas', 'Interior painting', 'Patch repairs'],
   },
   {
-    id: 'painting',
-    title: 'Painting & Patch Repairs',
+    id: 'made',
+    title: 'Stages, Props & Tech',
     blurb:
-      'Patch, sand, prime, finish. The unglamorous part that decides whether the whole room reads as finished or not.',
-    items: ['Interior painting', 'Patch repairs', 'Prep & finishing', 'Touch-ups'],
-  },
-  {
-    id: 'sets',
-    title: 'Sets, Stages & Props',
-    blurb:
-      'Festival stages, film props, installations. Built fast, built strange, built to look extraordinary under lights.',
-    items: ['Festival stages', 'Film & TV props', 'Set building', 'Installations', 'Scenic carpentry'],
-  },
-  {
-    id: 'tech',
-    title: 'WiFi, Smart Home & Tech',
-    blurb:
-      'Dead spots, mesh setups, cameras, automation. The bit where the builder who understands networking saves you two callouts.',
-    items: ['WiFi & mesh setup', 'Troubleshooting', 'Smart home automation', 'Cameras & sensors', 'TV & AV mounting'],
-  },
-  {
-    id: 'fabrication',
-    title: 'Design & 3D Printing',
-    blurb:
-      'When the part you need doesn’t exist, it gets designed and printed. Brackets, mounts, replacements, one-offs.',
-    items: ['Custom parts', '3D printing', 'Replacement fittings', 'Prototyping', 'Design work'],
+      'Festival stages, film props, smart home, and the bracket nobody sells any more — designed and printed.',
+    items: ['Festival stages', 'Film & TV props', 'WiFi & smart home', '3D printed parts'],
   },
 ]
 
@@ -201,6 +156,16 @@ export const work: WorkItem[] = [
       'Multiple years of stage and set construction. Fast builds, big structures, no second chances on opening night.',
     images: [],
     tag: 'Stage',
+  },
+  {
+    id: 'treasure-chest',
+    samples: ['/images/samples/workshop.jpg', '/images/samples/tools.jpg'],
+    title: 'The Treasure Chest',
+    location: 'Shipwrecked Festival',
+    blurb:
+      'A locked chest with a holographic countdown, built as a festival-wide treasure hunt. Carpentry, electronics and game design in one object.',
+    images: [],
+    tag: 'Props',
   },
   {
     id: 'film-props',

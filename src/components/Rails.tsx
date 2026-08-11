@@ -5,11 +5,7 @@ const sections = [
   { id: 'top', label: 'Top' },
   { id: 'services', label: 'What I Do' },
   { id: 'work', label: 'Work' },
-  { id: 'palapa', label: 'Palapa' },
-  { id: 'shipwrecked', label: 'Treasure hunt' },
-  { id: 'assembly', label: 'How it goes together' },
   { id: 'about', label: 'About' },
-  { id: 'testimonials', label: 'Testimonials' },
   { id: 'enquire', label: 'Contact' },
 ]
 

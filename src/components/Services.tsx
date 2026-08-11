@@ -1,57 +1,61 @@
 import { services, site } from '../lib/site'
 import { Reveal, SectionLabel, GhostWord } from './Reveal'
 
+/**
+ * Four columns, one screen — the row-of-services block every reference uses
+ * (Absolute3D's four icons, TechGear's four cards). The previous version was
+ * seven cards in a grid, which is a section you scroll rather than read.
+ */
 export function Services({ onEnquire }: { onEnquire: () => void }) {
   return (
-    <section id="services" className="relative px-6 py-28 sm:px-12 sm:py-36 lg:px-16">
-      <Reveal>
-        <div className="relative"><GhostWord>Trades</GhostWord></div>
+    <section id="services" className="relative py-24 sm:py-32">
+      <div className="px-6 sm:px-12 lg:px-16">
+        <Reveal>
+          <div className="relative">
+            <GhostWord>Trades</GhostWord>
+          </div>
           <SectionLabel index="01">What I Do</SectionLabel>
-        <h2 className="max-w-3xl display-lg text-[clamp(2.2rem,5.5vw,4.25rem)]">
-          One person, <span className="text-timber">most trades</span>, no runaround.
-        </h2>
-        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ash">
-          Most jobs need three different people and four phone calls. Usually they don't.{' '}
-          {site.minimumHours}-hour minimum, and I'd rather take on the whole list than the one easy bit.
-        </p>
-      </Reveal>
+          <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-end">
+            <h2 className="display-lg text-[clamp(2rem,4.6vw,3.4rem)]">
+              One person, <span className="serif-accent text-timber">most trades</span>,
+              <br />
+              no runaround.
+            </h2>
+            <p className="max-w-sm text-[15px] font-light leading-[1.8] text-ash">
+              Most jobs need three different people and four phone calls. Usually they don't.{' '}
+              {site.minimumHours}-hour minimum, and I'd rather take the whole list than the one
+              easy bit.
+            </p>
+          </div>
+        </Reveal>
 
-      <div className="mt-16 grid gap-px overflow-hidden rounded-[3px] border border-slate/40 bg-slate/40 sm:grid-cols-2 lg:grid-cols-3">
-        {services.map((s, i) => (
-          <Reveal key={s.id} delay={i * 0.05}>
-            <article className="group relative h-full bg-ink p-8 transition-colors duration-500 hover:bg-charcoal">
-              <span className="label text-timber/50">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-5 display-lg text-2xl text-bone">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-ash">{s.blurb}</p>
-              <ul className="mt-6 flex flex-wrap gap-x-3 gap-y-2">
-                {s.items.map((it) => (
-                  <li
-                    key={it}
-                    className="rounded-[2px] border border-slate/60 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.1em] text-dust transition-colors duration-500 group-hover:border-walnut group-hover:text-oak"
-                  >
-                    {it}
-                  </li>
-                ))}
-              </ul>
-            </article>
-          </Reveal>
-        ))}
+        <div className="mt-14 grid gap-px bg-slate/30 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((s, i) => (
+            <Reveal key={s.id} delay={i * 0.05}>
+              <article className="h-full bg-charcoal/80 p-7 transition-colors duration-500 hover:bg-graphite/80">
+                <p className="font-mono text-[10px] tracking-[0.2em] text-timber/60">
+                  {String(i + 1).padStart(2, '0')}
+                </p>
+                <h3 className="mt-5 display-lg text-[1.15rem] leading-tight">{s.title}</h3>
+                <p className="mt-4 text-[14px] font-light leading-[1.75] text-ash">{s.blurb}</p>
+                <ul className="mt-5 space-y-1.5">
+                  {s.items.map((it) => (
+                    <li key={it} className="font-mono text-[10px] uppercase tracking-[0.12em] text-dust">
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
+          ))}
+        </div>
 
-        <Reveal delay={services.length * 0.05}>
+        <Reveal delay={0.2}>
           <button
             onClick={onEnquire}
-            className="flex h-full w-full flex-col justify-between bg-charcoal p-8 text-left transition-colors duration-500 hover:bg-graphite"
+            className="mt-10 border border-slate px-8 py-4 font-mono text-[11px] uppercase tracking-[0.18em] text-bone transition-colors duration-500 hover:border-timber hover:text-timber"
           >
-            <span className="label text-timber/50">Not listed?</span>
-            <span className="mt-5 display-lg text-2xl text-bone">
-              Ask anyway.
-              <br />
-              <span className="text-timber">It's probably a yes.</span>
-            </span>
+            Not listed? Ask anyway
           </button>
         </Reveal>
       </div>

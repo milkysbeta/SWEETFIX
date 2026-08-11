@@ -4,11 +4,7 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Services } from './components/Services'
 import { Work } from './components/Work'
-import { Palapa } from './components/Palapa'
-import { TreasureChest } from './components/TreasureChest'
-import { HouseAssembly } from './components/HouseAssembly'
 import { About } from './components/About'
-import { Testimonials } from './components/Testimonials'
 import { Contact } from './components/Contact'
 import { Footer } from './components/Footer'
 import { EnquiryModal } from './components/Enquiry'
@@ -56,12 +52,8 @@ function Home() {
           <Hero onEnquire={open} />
           <Services onEnquire={open} />
           <Work />
-          <Palapa />
-          <TreasureChest />
-          <HouseAssembly />
           <About />
-          <Testimonials />
-          <Contact onEnquire={open} />
+          <Contact />
         </Column>
       </main>
       <Footer />

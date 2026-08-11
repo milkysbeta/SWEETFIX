@@ -6,7 +6,8 @@ import { useScrollY } from '../lib/hooks'
 // Deliberately short. The page is one scroll — the menu is for the three
 // things someone might want to jump straight to.
 const nav = [
-  { href: '#testimonials', label: 'Testimonials' },
+  { href: '#services', label: 'What I Do' },
+  { href: '#work', label: 'Work' },
   { href: '#enquire', label: 'Contact' },
 ]
 
